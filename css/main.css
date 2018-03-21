@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'ClockD';
+    src: url('digital-7 (mono).ttf') format("truetype");
+  }
+
+  body {
+      display: flex;
+      /* flex-direction: column; */
+  }
+
+  #clock {
+      background-color:black;
+      color:red;
+      font-family: 'ClockD', Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      width: 300px;
+      height: 70px;
+      line-height: 70px;
+      margin: 100px auto;
+      text-align: center;
+      border: 3px solid red;
+      border-radius: 5px;
+  }
+
+  #rgb {
+    color:white;
+    font-family: 'ClockD', Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    margin: 60px auto;
+    text-align: center;
+  }
+
+  /* analog */
+  .clock {
+    border-radius: 50%;
+    background: #fff url(../500pxClockFace.png) no-repeat center;
+    background-size: 88%;
+    height: 20em;
+    padding-bottom: 31%;
+    position: relative;
+    width: 20em;
+    margin: 0 auto;
+  }
+
+  .minutes-container, .hours-container, .seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .hours {
+    background: rgb(48, 238, 0);
+    height: 10%;
+    left: 48.45%;
+    position: absolute;
+    top: 40%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+  }
+
+  .minutes {
+    background: rgb(1, 39, 255);
+    height: 14%;
+    left: 48.6%;
+    position: absolute;
+    top: 36%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
+
+  .seconds {
+    background: red;
+    height: 18%;
+    left: 49.6%;
+    position: absolute;
+    top: 35.5%;
+    transform-origin: 50% 80%;
+    width: 1%;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  .hours-container {
+    animation: rotate 43200s infinite linear;
+  }
+
+  .minutes-container {
+    animation: rotate 3600s infinite linear;
+  }
+  
+  .seconds-container {
+    animation: rotate 60s infinite linear;
+  }
